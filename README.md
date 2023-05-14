@@ -62,6 +62,12 @@ it depends on what you are using for managing your zsh plugins.
 - puts them in their own zsh file with `export LS_COLORS=`
 - sources one of them depending on what you set
 
+## what if i just want something simpler?
+
+1. install [vivid](https://github.com/sharkdp/vivid)
+2. put `export LS_COLORS="$(vivid generate "<name of theme>")"` in `~/.zshrc`
+3. that was simpler than installing a plugin wasn't it
+
 ## how do i build themes locally?
 
 1. install [vivid](https://github.com/sharkdp/vivid)
