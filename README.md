@@ -8,7 +8,7 @@ installable anywhere that supports git repositories as plugins.
 
 it depends on what you are using for managing your zsh plugins.
 
-## antidote
+### antidote
 
 1. add `ryanccn/vivid-zsh` to your `.zsh_plugins.txt`
 2. set
@@ -17,7 +17,7 @@ it depends on what you are using for managing your zsh plugins.
    ```
    before `antidote load`
 
-## oh my zsh
+### oh my zsh
 
 1. clone the repo into the oh my zsh directory
    ```sh
@@ -32,7 +32,7 @@ it depends on what you are using for managing your zsh plugins.
    ```
 3. configure `vivid_theme="<name of theme>" before oh my zsh is initialized
 
-## manual (no plugin manager)
+### manual (no plugin manager)
 
 1. clone the repo
    ```bash
