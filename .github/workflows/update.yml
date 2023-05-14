@@ -16,14 +16,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 19
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
       - name: Install Rust
         uses: actions-rs/toolchain@v1
         with:
@@ -32,10 +24,8 @@ jobs:
       - name: Install Vivid
         run: cargo install vivid
 
-      - name: Install dependencies
-        run: pnpm install
       - name: Build plugins
-        run: pnpm build
+        run: ./build.sh
 
       - name: Commit and push
         uses: EndBug/add-and-commit@v9
