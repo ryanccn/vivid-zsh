@@ -1,0 +1,17 @@
+{
+  "name": "vivid-zsh",
+  "version": "0.0.1",
+  "description": "zsh plugins for vivid",
+  "type": "module",
+  "scripts": {
+    "build": "tsx build.ts"
+  },
+  "author": "Ryan Cao <hello@ryanccn.dev>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.1.4",
+    "execa": "^7.1.1",
+    "tsx": "^3.12.7",
+    "typescript": "^5.0.4"
+  }
+}
