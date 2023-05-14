@@ -13,12 +13,8 @@ installable anywhere that supports git repositories as plugins.
 
 ## how do i build locally?
 
-```sh
-$ pnpm i
-$ pnpm build
-```
-
-(vivid has to be installed)
+1. install [vivid](https://github.com/sharkdp/vivid)
+2. run `./build.sh`
 
 ## license
 
