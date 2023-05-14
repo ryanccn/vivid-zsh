@@ -39,7 +39,7 @@ it depends on what you are using for managing your zsh plugins.
       vivid-zsh
    )
    ```
-3. configure `vivid_theme="<name of theme>" before oh my zsh is initialized
+3. configure `vivid_theme="<name of theme>"` before oh my zsh is initialized
 
 ### manual (no plugin manager)
 
