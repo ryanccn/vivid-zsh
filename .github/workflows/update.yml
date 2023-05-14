@@ -16,16 +16,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Install Rust
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
 
-      - name: Install Vivid
-        run: cargo install vivid
+      - name: Install Nix
+        uses: cachix/install-nix-action@v20
 
       - name: Build plugins
-        run: ./build.sh
+        run: |
+          nix shell nixpkgs#{bash,coreutils,vivid} \
+            -i --command bash -c './build.sh'
 
       - name: Commit and push
         uses: EndBug/add-and-commit@v9
