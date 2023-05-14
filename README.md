@@ -2,11 +2,7 @@
 
 [vivid](https://github.com/sharkdp/vivid) `LS_COLORS` as zsh plugins.
 
-installable anywhere that supports git repositories as plugins.
-
-## how do i install this?
-
-it depends on what you are using for managing your zsh plugins.
+[installable](#how-do-i-install-this) anywhere that supports git repositories as plugins.
 
 ## why do i need this?
 
@@ -22,6 +18,12 @@ benchmark results via [hyperfine](https://github.com/sharkdp/hyperfine)
 ```bash
 $ hyperfine --shell "zsh" --warmup=5 'vivid_theme=nord source vivid-zsh.plugin.zsh' -n plugin 'export LS_COLORS="$(vivid generate nord)"' -n cli
 ```
+
+yes, this is faster than rust. insane.
+
+## how do i install this?
+
+it depends on what you are using for managing your zsh plugins.
 
 ### antidote
 
