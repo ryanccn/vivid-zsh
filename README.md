@@ -8,11 +8,26 @@ installable anywhere that supports git repositories as plugins.
 
 it depends on what you are using for managing your zsh plugins.
 
+## why do i need this?
+
+simply put, this is faster than calling an external CLI.
+
+benchmark results via [hyperfine](https://github.com/sharkdp/hyperfine)
+
+| Command  | Mean [ms] | Min [ms] | Max [ms] |      Relative |
+| :------- | --------: | -------: | -------: | ------------: |
+| `plugin` | 0.2 ± 0.4 |      0.0 |      3.1 |          1.00 |
+| `cli`    | 3.8 ± 2.4 |      1.9 |     27.3 | 16.36 ± 27.48 |
+
+```bash
+$ hyperfine --shell "zsh" --warmup=5 'vivid_theme=nord source vivid-zsh.plugin.zsh' -n plugin 'export LS_COLORS="$(vivid generate nord)"' -n cli
+```
+
 ### antidote
 
 1. add `ryanccn/vivid-zsh` to your `.zsh_plugins.txt`
 2. set
-   ```sh
+   ```bash
    vivid_theme="<name of theme>"
    ```
    before `antidote load`
@@ -21,7 +36,7 @@ it depends on what you are using for managing your zsh plugins.
 
 1. `antigen bundle ryanccn/vivid-zsh`
 2. set
-   ```sh
+   ```bash
    vivid_theme="<name of theme>"
    ```
    in your `~/.zshrc` before antigen loads
@@ -29,11 +44,11 @@ it depends on what you are using for managing your zsh plugins.
 ### oh my zsh
 
 1. clone the repo into the oh my zsh directory
-   ```sh
+   ```bash
    $ git clone https://github.com/ryanccn/vivid-zsh ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/vivid-zsh
    ```
 2. add the plugin to your `~/.zshrc`
-   ```sh
+   ```bash
    plugins=(
       # other plugins...
       vivid-zsh
@@ -49,7 +64,7 @@ it depends on what you are using for managing your zsh plugins.
    $ git clone https://github.com/ryanccn/vivid-zsh.git ~/.zsh/vivid-zsh
    ```
 2. add this to your `.zshrc`
-   ```sh
+   ```bash
    vivid_theme="<name of theme>"
    source ~/.zsh/vivid-zsh/vivid-zsh.zsh
    ```
@@ -61,12 +76,6 @@ it depends on what you are using for managing your zsh plugins.
 - gets each theme from vivid
 - puts them in their own zsh file with `export LS_COLORS=`
 - sources one of them depending on what you set
-
-## what if i just want something simpler?
-
-1. install [vivid](https://github.com/sharkdp/vivid)
-2. put `export LS_COLORS="$(vivid generate "<name of theme>")"` in `~/.zshrc`
-3. that was simpler than installing a plugin wasn't it
 
 ## how do i build themes locally?
 
