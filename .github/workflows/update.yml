@@ -22,8 +22,8 @@ jobs:
 
       - name: Build plugins
         run: |
-          nix shell nixpkgs#vivid
-          ./build.sh
+          nix shell nixpkgs#{bash,coreutils,vivid} \
+            -i --command bash -c './build.sh'
 
       - name: Commit and push
         uses: EndBug/add-and-commit@v9
