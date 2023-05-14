@@ -17,6 +17,15 @@ it depends on what you are using for managing your zsh plugins.
    ```
    before `antidote load`
 
+### antigen
+
+1. `antigen bundle ryanccn/vivid-zsh`
+2. set
+   ```sh
+   vivid_theme="<name of theme>"
+   ```
+   in your `~/.zshrc` before antigen loads
+
 ### oh my zsh
 
 1. clone the repo into the oh my zsh directory
